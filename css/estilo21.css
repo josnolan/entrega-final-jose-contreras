@@ -1,0 +1,2025 @@
+/* Variables*/
+/* Map-get*/
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  size: cover;
+}
+
+#area {
+  display: grid;
+  grid-template-areas: "menu  menu  menu" "info info info" "info2 info2 info2" "articulo articulo articulo" "footer footer footer";
+  gap: 0 px;
+  height: 270vh;
+  grid-template-rows: 80px 330px 460px auto 50px;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+#area header {
+  grid-area: info;
+  /*position:fixed;*/
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding-bottom: 5px;
+  background-image: url(../assets/clases_particulares2.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+#area header h2 {
+  grid-area: info;
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  padding-top: 135px;
+  color: antiquewhite;
+  z-index: -1;
+}
+#area header .publicidad {
+  display: flex;
+  justify-content: space-between;
+  z-index: -1;
+}
+#area header h6 {
+  height: 50px;
+  width: 400px;
+  padding: 10px;
+  margin-right: 20px;
+  background-color: #537A38;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  text-align: center;
+}
+#area header span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+@keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+#area section {
+  grid-area: info2;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+#area section .principal {
+  font-family: "Roboto Slab", serif;
+  justify-items: flex-start;
+}
+#area section .principal .lista {
+  height: 80px;
+  width: auto;
+  text-align: center;
+}
+#area section .principal .lista ul {
+  display: inline;
+  list-style: lower-roman;
+  font-style: oblique;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+#area section h1 {
+  text-align: center;
+  font-weight: bold;
+  justify-self: center;
+}
+#area section p, #area section span {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  padding: 5px 10px 0px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#area section span {
+  color: blue;
+}
+#area nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  grid-area: menu;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  /*padding-left: 100px;*/
+  z-index: 1;
+}
+#area nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+#area nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+#area nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+#area nav div img {
+  height: auto;
+  width: 80px;
+  padding-left: 0px;
+}
+#area article {
+  grid-area: articulo;
+  display: flex;
+  align-content: center;
+  justify-items: center;
+  align-items: flex-start;
+  padding-left: 20px;
+  gap: 10px;
+}
+#area article img {
+  border-radius: 20px;
+}
+#area article p, #area article section span, #area section article span {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  padding: 5px 10px 0px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#area footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  padding: 5px;
+}
+
+a.btn-social,
+.btn-social {
+  border-radius: 50%;
+  color: #ffffff !important;
+  display: inline-block;
+  height: 54px;
+  line-height: 54px;
+  margin: 8px 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  width: 54px;
+}
+
+.btn-social .fa, .btn-social i {
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform: scale(1);
+  transition: all 0.25s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: scale(1);
+  -webkit-transition: all 0.25s;
+}
+
+.btn-social:hover, .btn-social:focus {
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-social:hover .fa, .btn-social:focus .fa, .btn-social:hover i, .btn-social:focus i {
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+}
+
+.btn-social.btn-xs {
+  font-size: 9px;
+  height: 24px;
+  line-height: 13px;
+  margin: 6px 2px;
+  width: 24px;
+}
+
+.btn-social.btn-sm {
+  font-size: 13px;
+  height: 36px;
+  line-height: 18px;
+  margin: 6px 2px;
+  width: 36px;
+}
+
+.btn-social.btn-lg {
+  font-size: 22px;
+  height: 72px;
+  line-height: 40px;
+  margin: 10px 6px;
+  width: 72px;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+}
+
+.btn-facebook:hover {
+  background-color: #4c70ba;
+}
+
+.btn-google-plus {
+  background-color: #dd4b39;
+}
+
+.btn-google-plus:hover {
+  background-color: #e47365;
+}
+
+.btn-instagram {
+  background-color: #3f729b;
+}
+
+.btn-instagram:hover {
+  background-color: #548cb9;
+}
+
+.btn-twitter {
+  background-color: #55acee;
+}
+
+.btn-twitter:hover {
+  background-color: #83c3f3;
+}
+
+.btn-youtube {
+  background-color: #e52d27;
+}
+
+.btn-youtube:hover {
+  background-color: #ea5955;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area {
+    display: flex;
+    flex-direction: column;
+    height: 390vh;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  #area header {
+    margin: 100px 0px 0px 0px;
+    padding: 120px 0px 0px 0px;
+  }
+  #area header h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -190px;
+    color: antiquewhite;
+    z-index: -1;
+  }
+  #area header .publicidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+    padding-top: 60px;
+  }
+  #area header h6 {
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    margin-right: 20px;
+    background-color: #537A38;
+    -webkit-animation-name: example;
+    animation-name: example;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    text-align: center;
+  }
+  #area section {
+    margin: 0px;
+    padding: 10px 0px 0px 0px;
+  }
+  #area article {
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 70px;
+    margin: 0px;
+    flex-direction: column;
+  }
+  #area article p, #area article section span, #area section article span {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    padding: 0px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  #area article .bloque1, .bloque2, .bloque3 {
+    width: 300px;
+    height: auto;
+    padding: 0px;
+    margin: 0;
+  }
+  #area article img {
+    width: 300px;
+    height: auto;
+    padding: 0px;
+  }
+}
+#area footer {
+  padding: 0px 5px 0px 5px;
+  margin: 0px;
+  order: 4;
+}
+
+#area5 {
+  display: grid;
+  grid-template-areas: "menu  menu  menu menu" "info2 info2 info2 banner" "articulo articulo articulo banner" "footer footer footer footer";
+  gap: 5px;
+  height: 120vh;
+  grid-template-rows: 80px auto auto 30px;
+  grid-template-columns: auto auto auto 310px;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+
+#area5 header {
+  grid-area: info;
+  position: fixed;
+  top: 50px;
+  left: 120px;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#area5 header img {
+  width: 100%;
+  height: auto;
+  padding: 20px 20px;
+  margin: 20px 20px;
+}
+
+#area5 nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  /*padding-left: 100px;*/
+  z-index: 1;
+}
+
+#area5 nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#area5 nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+#area5 nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+
+#area5 nav div img {
+  height: auto;
+  width: 80px;
+  padding-left: 0px;
+}
+
+#area5 section {
+  grid-area: info2;
+  margin: 30px 30px 0px 30px;
+}
+
+#area5 section p, #area5 #area section span, #area #area5 section span {
+  height: auto;
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 10px 0px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#area5 section form {
+  display: flex;
+  justify-content: center;
+}
+
+#area5 section h1 {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#area5 section table {
+  margin: 0 auto;
+}
+
+#area5 section .seccion1 {
+  display: flex;
+}
+
+#area5 section table td {
+  text-align: center;
+}
+
+#area5 section .et {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area5 article {
+  grid-area: articulo;
+  margin: 0px 30px;
+}
+
+#area5 article p, #area5 article #area section span, #area section #area5 article span {
+  height: auto;
+  width: 100%;
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#area5 article h3 {
+  font-weight: bold;
+  padding: 10px 10px;
+}
+
+#area5 article .ir {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+#area5 article .ir a {
+  color: whitesmoke;
+}
+
+#area5 article .ir a:hover {
+  color: black;
+}
+
+#area5 aside {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5px 0;
+}
+
+#area5 aside .ban1 {
+  height: auto;
+  width: 100%;
+  margin: 5px 10px;
+  padding: 5px 10px;
+}
+
+#area5 aside .ban2 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area5 aside .ban3 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area5 aside .ban4 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area5 footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  padding: 5px;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area5 {
+    display: flex;
+    flex-direction: column;
+    height: 180vh;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  #area5 menu {
+    order: 1;
+  }
+  #area5 section {
+    margin: 30px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
+    order: 2;
+  }
+  #area5 aside {
+    margin: 0px;
+    padding: 0px;
+    order: 3;
+  }
+  #area5 aside .ban1 {
+    display: none;
+  }
+  #area5 aside .ban2 {
+    margin: 0px;
+    padding: 30px 0 px 0px 0px;
+    width: 400px;
+    height: 170px;
+  }
+  #area5 article {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 4;
+  }
+  #area5 footer {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 5;
+  }
+  #area5 article .ir {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+  }
+  #area5 article .ir a {
+    color: whitesmoke;
+  }
+  #area5 article .ir a:hover {
+    color: black;
+  }
+} /*# sourceMappingURL=estilo61.css.map */
+#area4 {
+  display: grid;
+  grid-template-areas: "menu  menu  menu" "info2 info2 info2" "info2 info2 info2" "footer footer footer";
+  gap: 5px;
+  height: 190vh;
+  grid-template-rows: 80px auto auto 30px;
+  grid-template-columns: auto auto auto;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+
+#area4 header {
+  grid-area: info;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#area4 header img {
+  width: 100%;
+  height: auto;
+}
+
+#area4 nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  /*padding-left: 100px;*/
+  z-index: 1;
+}
+
+#area4 nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#area4 nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+#area4 nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+
+#area4 nav div img {
+  height: auto;
+  width: 80px;
+  padding-left: 0px;
+}
+
+#area4 section {
+  grid-area: info2;
+  padding-top: 20px;
+}
+
+#area4 section h1 {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#area4 section p, #area4 #area section span, #area #area4 section span {
+  height: auto;
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 30px 0px 30px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#area4 section .titulo3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+#area4 section table {
+  margin: 0 auto;
+}
+
+#area4 section .seccion1 {
+  display: flex;
+}
+
+#area4 section table td {
+  text-align: center;
+}
+
+#area4 section table th {
+  text-align: center;
+}
+
+#area4 section .et {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area4 section .ir {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+#area4 section .ir a {
+  color: whitesmoke;
+}
+
+#area4 section .ir a:hover {
+  color: black;
+}
+
+#area4 article {
+  grid-area: articulo;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+  align-items: flex-end;
+}
+
+#area4 article div {
+  width: 100%;
+  height: auto;
+}
+
+#area4 article img {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+#area4 article p, #area4 article #area section span, #area section #area4 article span {
+  margin: 0;
+  padding: 10px;
+  color: brown;
+}
+
+#area4 aside {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#area4 aside .ban1 {
+  width: 100%;
+  height: auto;
+}
+
+#area4 aside .ban2 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area4 aside .ban3 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area4 aside .ban4 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area4 footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  padding: 15px;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area4 {
+    display: flex;
+    flex-direction: column;
+    height: 190vh;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  #area4 section {
+    margin: 30px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
+  }
+  #area4 footer {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+  }
+  #area4 section .ir {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+  }
+  #area4 section .ir a {
+    color: whitesmoke;
+  }
+  #area4 section .ir a:hover {
+    color: black;
+  }
+}
+@media (max-width: 1024px) and (max-width: 1024px) {
+  #area4 section td {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 1024px) and (max-width: 1024px) {
+  #area4 section th {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 1024px) and (max-width: 1024px) {
+  #area4 section .titulo2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    justify-self: center;
+  }
+}
+@media (max-width: 1024px) and (max-width: 1024px) {
+  #area4 section h2 {
+    display: none;
+  }
+}
+/*are3*/
+#area3 {
+  display: grid;
+  grid-template-areas: "menu  menu  menu" "info2 info2 banner" "info2 info2 banner" "footer footer footer";
+  gap: 5px;
+  height: 145vh;
+  grid-template-rows: 80px auto 170px 30px;
+  grid-template-columns: auto auto 400px;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+
+#area3 header {
+  grid-area: info;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#area3 header img {
+  height: auto;
+  width: 100%;
+}
+
+#area3 nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+}
+
+#area3 nav div img {
+  height: auto;
+  width: 80px;
+  padding-left: 0px;
+}
+
+#area3 nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#area3 nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+#area3 nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+
+#area3 section {
+  grid-area: info2;
+  padding-top: 40px;
+}
+
+#area3 section h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#area3 section form {
+  display: flex;
+  justify-content: center;
+}
+
+#area3 section .titulo2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#area3 section .titulo {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#area3 section .et {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area3 section .et .textarea {
+  width: 300px;
+  height: 100px;
+  border: 1px;
+}
+
+#area3 section .et2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area3 section .ir {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+#area3 section .ir a {
+  color: whitesmoke;
+}
+
+#area3 section .ir a:hover {
+  color: black;
+}
+
+#area3 section input .et {
+  transition: all 1s;
+}
+
+#area3 section .et input:focus {
+  height: 50px;
+  width: 500px;
+  background-color: #A8F571;
+}
+
+#area3 article {
+  grid-area: articulo;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+  align-items: flex-end;
+}
+
+#area3 aside {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#area3 aside .ban1 {
+  height: auto;
+  width: 100%;
+}
+
+#area3 aside .ban2 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside .ban3 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside .ban4 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside h8 {
+  width: 400px;
+  height: 100px;
+  padding: 5px;
+  padding-top: 40px;
+  margin-right: 0px;
+  background-color: #537A38;
+  -webkit-animation-name: example;
+  animation-name: example;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+
+@-webkit-keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+@keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+#area3 footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  padding: 5px;
+}
+
+#area3 article div {
+  width: 100%;
+  height: auto;
+}
+
+#area3 article img {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+#area3 article p, #area3 article #area section span, #area section #area3 article span {
+  margin: 0;
+  padding: 10px;
+  color: brown;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area3 {
+    display: flex;
+    flex-direction: column;
+    height: 190vh;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  #area3 menu {
+    order: 1;
+  }
+  #area3 section {
+    margin: 30px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
+    order: 2;
+  }
+  #area3 aside {
+    margin: 0px;
+    padding: 0px;
+    order: 3;
+  }
+  #area3 .extension {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 4;
+  }
+  #area3 footer {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 5;
+  }
+  #area3 .extension .ir {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+  }
+  #area3 .extension .ir a {
+    color: whitesmoke;
+  }
+  #area3 .extension .ir a:hover {
+    color: black;
+  }
+  #area3 aside .ban1 {
+    display: none;
+  }
+} /*# sourceMappingURL=estilo61.css.map */
+#area3 {
+  display: grid;
+  grid-template-areas: "menu  menu  menu" "info2 info2 banner" "info2 info2 banner" "footer footer footer";
+  gap: 5px;
+  height: 145vh;
+  grid-template-rows: 80px auto 170px 30px;
+  grid-template-columns: auto auto 400px;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+
+#area3 header {
+  grid-area: info;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#area3 header img {
+  height: auto;
+  width: 100%;
+}
+
+#area3 nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+}
+
+#area3 nav div img {
+  height: auto;
+  width: 80px;
+  padding-left: 0px;
+}
+
+#area3 nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#area3 nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+#area3 nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+
+#area3 section {
+  grid-area: info2;
+  padding-top: 40px;
+}
+
+#area3 section h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#area3 section form {
+  display: flex;
+  justify-content: center;
+}
+
+#area3 section .titulo2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#area3 section .titulo {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#area3 section .et {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area3 section .et .textarea {
+  width: 300px;
+  height: 100px;
+  border: 1px;
+}
+
+#area3 section .et2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area3 section .ir {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+#area3 section .ir a {
+  color: whitesmoke;
+}
+
+#area3 section .ir a:hover {
+  color: black;
+}
+
+#area3 section input .et {
+  transition: all 1s;
+}
+
+#area3 section .et input:focus {
+  height: 50px;
+  width: 500px;
+  background-color: #A8F571;
+}
+
+#area3 article {
+  grid-area: articulo;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+  align-items: flex-end;
+}
+
+#area3 aside {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#area3 aside .ban1 {
+  height: auto;
+  width: 100%;
+}
+
+#area3 aside .ban2 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside .ban3 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside .ban4 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside h8 {
+  width: 400px;
+  height: 100px;
+  padding: 5px;
+  padding-top: 40px;
+  margin-right: 0px;
+  background-color: #537A38;
+  -webkit-animation-name: example;
+  animation-name: example;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+
+@-webkit-keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+@keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+#area3 footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  padding: 5px;
+}
+
+#area3 article div {
+  width: 100%;
+  height: auto;
+}
+
+#area3 article img {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+#area3 article p, #area3 article #area section span, #area section #area3 article span {
+  margin: 0;
+  padding: 10px;
+  color: brown;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area3 {
+    display: flex;
+    flex-direction: column;
+    height: 190vh;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  #area3 menu {
+    order: 1;
+  }
+  #area3 section {
+    margin: 30px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
+    order: 2;
+  }
+  #area3 aside {
+    margin: 0px;
+    padding: 0px;
+    order: 3;
+  }
+  #area3 .extension {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 4;
+  }
+  #area3 footer {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 5;
+  }
+  #area3 .extension .ir {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+  }
+  #area3 .extension .ir a {
+    color: whitesmoke;
+  }
+  #area3 .extension .ir a:hover {
+    color: black;
+  }
+  #area3 aside .ban1 {
+    display: none;
+  }
+} /*# sourceMappingURL=estilo61.css.map */
+/*area6*/
+#area3 {
+  display: grid;
+  grid-template-areas: "menu  menu  menu" "info2 info2 banner" "info2 info2 banner" "footer footer footer";
+  gap: 5px;
+  height: 145vh;
+  grid-template-rows: 80px auto 170px 30px;
+  grid-template-columns: auto auto 400px;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+
+#area3 header {
+  grid-area: info;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#area3 header img {
+  height: auto;
+  width: 100%;
+}
+
+#area3 nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+}
+
+#area3 nav div img {
+  height: auto;
+  width: 80px;
+  padding-left: 0px;
+}
+
+#area3 nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#area3 nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+#area3 nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+
+#area3 section {
+  grid-area: info2;
+  padding-top: 40px;
+}
+
+#area3 section h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#area3 section form {
+  display: flex;
+  justify-content: center;
+}
+
+#area3 section .titulo2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#area3 section .titulo {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#area3 section .et {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area3 section .et .textarea {
+  width: 300px;
+  height: 100px;
+  border: 1px;
+}
+
+#area3 section .et2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+#area3 section .ir {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+#area3 section .ir a {
+  color: whitesmoke;
+}
+
+#area3 section .ir a:hover {
+  color: black;
+}
+
+#area3 section input .et {
+  transition: all 1s;
+}
+
+#area3 section .et input:focus {
+  height: 50px;
+  width: 500px;
+  background-color: #A8F571;
+}
+
+#area3 article {
+  grid-area: articulo;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+  align-items: flex-end;
+}
+
+#area3 aside {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#area3 aside .ban1 {
+  height: auto;
+  width: 100%;
+}
+
+#area3 aside .ban2 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside .ban3 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside .ban4 {
+  margin: 0;
+  padding: 5px;
+}
+
+#area3 aside h8 {
+  width: 400px;
+  height: 100px;
+  padding: 5px;
+  padding-top: 40px;
+  margin-right: 0px;
+  background-color: #537A38;
+  -webkit-animation-name: example;
+  animation-name: example;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  text-align: center;
+}
+
+@-webkit-keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+@keyframes example {
+  0% {
+    background-color: #537A38;
+  }
+  25% {
+    background-color: #D4F7BB;
+  }
+  50% {
+    background-color: #A8F571;
+  }
+  100% {
+    background-color: green;
+  }
+}
+#area3 footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  padding: 5px;
+}
+
+#area3 article div {
+  width: 100%;
+  height: auto;
+}
+
+#area3 article img {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+#area3 article p, #area3 article #area section span, #area section #area3 article span {
+  margin: 0;
+  padding: 10px;
+  color: brown;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area3 {
+    display: flex;
+    flex-direction: column;
+    height: 190vh;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  #area3 menu {
+    order: 1;
+  }
+  #area3 section {
+    margin: 30px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
+    order: 2;
+  }
+  #area3 aside {
+    margin: 0px;
+    padding: 0px;
+    order: 3;
+  }
+  #area3 .extension {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 4;
+  }
+  #area3 footer {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 5;
+  }
+  #area3 .extension .ir {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+  }
+  #area3 .extension .ir a {
+    color: whitesmoke;
+  }
+  #area3 .extension .ir a:hover {
+    color: black;
+  }
+  #area3 aside .ban1 {
+    display: none;
+  }
+} /*# sourceMappingURL=estilo61.css.map */
+/*area6*/
+body {
+  overflow-x: hidden;
+  size: cover;
+}
+
+#area6 {
+  display: grid;
+  grid-template-areas: "menu menu menu menu" "info2 info2 info2 banner" "info3 info3 info3 info3" "footer footer footer footer";
+  gap: 5px;
+  height: 150vh;
+  grid-template-rows: 80px 480px 250px 60px;
+  grid-template-columns: 25% 25% 25% 25%;
+  background: linear-gradient(to top, #537A38, #D4F7BB, #A8F571);
+}
+
+#area6 header {
+  grid-area: info;
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+#area6 header img {
+  width: 100%;
+  height: auto;
+  padding: 20px 20px;
+  margin: 20px 20px;
+}
+
+#area6 nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  /*padding-left: 100px;*/
+  z-index: 1;
+}
+
+#area6 nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-content: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#area6 nav ul li a {
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #A8F571;
+  text-decoration: none;
+  color: antiquewhite;
+  border-radius: 5px;
+}
+
+#area6 nav ul li a:hover {
+  background-color: white;
+  color: #657559;
+}
+
+#area6 nav div img {
+  width: 80px;
+  height: auto;
+  padding-left: 0px;
+}
+
+#area6 section {
+  grid-area: info2;
+  margin: 30px;
+}
+
+#area6 section h1 {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#area6 section p, #area6 #area section span, #area #area6 section span {
+  height: auto;
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 10px 0px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#area6 section form {
+  display: flex;
+  justify-content: center;
+}
+
+#area6 .extension {
+  grid-area: info3;
+  margin-top: 55px;
+  margin-left: 30px;
+  height: auto;
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 80px 0px 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#area6 .extension .ir {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+#area6 .extension .ir a {
+  color: whitesmoke;
+}
+
+#area6 .extension .ir a:hover {
+  color: black;
+}
+
+#area6 aside {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px 5px;
+}
+
+#area6 aside .ban1 {
+  height: auto;
+  width: 100%;
+  margin: 40px 10px;
+  padding: 40px 10px;
+}
+
+#area6 footer {
+  grid-area: footer;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+}
+@media (max-width: 1024px) {
+  #area6 {
+    display: flex;
+    flex-direction: column;
+    height: 370vh;
+    gap: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  #area6 menu {
+    order: 1;
+  }
+  #area6 section {
+    margin: 30px 0px 0px 0px;
+    padding: 70px 0px 0px 0px;
+    order: 2;
+  }
+  #area6 aside {
+    margin: 0px;
+    padding: 0px;
+    order: 3;
+  }
+  #area6 .extension {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 4;
+  }
+  #area6 footer {
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    order: 5;
+  }
+  #area6 .extension .ir {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+  }
+  #area6 .extension .ir a {
+    color: whitesmoke;
+  }
+  #area6 .extension .ir a:hover {
+    color: black;
+  }
+} /*# sourceMappingURL=estilo61.css.map *//*# sourceMappingURL=estilo21.css.map */
